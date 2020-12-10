@@ -257,10 +257,10 @@ def ttest(x, y, paired=False, tail='two-sided', correction='auto', r=.707):
     if ny == 1:
         ci += y
 
-    if tail == 'greater':
-        ci[1] = np.inf
-    elif tail == 'less':
-        ci[0] = -np.inf
+    # if tail == 'greater':
+    #     ci[1] = np.inf
+    # elif tail == 'less':
+    #     ci[0] = -np.inf
 
     # Achieved power
     if ny == 1:
