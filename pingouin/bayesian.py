@@ -7,12 +7,12 @@ from math import pi, exp, log, lgamma
 __all__ = ["bayesfactor_ttest", "bayesfactor_pearson", "bayesfactor_binom"]
 
 
-def _format_bf(bf, precision=3, trim='0'):
+def _format_bf(bf, precision=5, trim='0'):
     """Format BF10 to floating point or scientific notation.
     """
     if type(bf) == str:
         return bf
-    if bf >= 1e4 or bf <= 1e-4:
+    if bf >= 1e5 or bf <= 1e-5:
         out = np.format_float_scientific(bf, precision=precision, trim=trim)
     else:
         out = np.format_float_positional(bf, precision=precision, trim=trim)
